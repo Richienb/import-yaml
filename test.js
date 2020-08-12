@@ -1,13 +1,11 @@
 const test = require("ava")
-const theModule = require(".")
+const importYaml = require(".")
 
-test("main", t => {
-	t.throws(() => {
-		theModule(123)
-	}, {
-		instanceOf: TypeError,
-		message: "Expected a string, got number"
-	})
+test("main", async t => {
+	const expectedResult = {
+		example: 12345
+	}
 
-	t.is(theModule("unicorns"), "unicorns & rainbows")
+	t.deepEqual(await importYaml("fixture.yaml"), expectedResult)
+	t.deepEqual(importYaml.sync("fixture.yaml"), expectedResult)
 })

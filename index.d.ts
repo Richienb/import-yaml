@@ -1,15 +1,33 @@
-/**
-My awesome module.
-@param input Lorem ipsum.
-@param postfix Lorem ipsum.
-@example
-```
-const theModule = require("the-module");
+declare const importYaml: {
+	/**
+	Import a YAML file.
+	@param filename The file to import.
+	@example
+	```
+	const importYaml = require("import-yaml");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
-```
-*/
-declare function theModule(input: string, { postfix }: { postfix?: string }): string
+	(async () => {
+		const data = await importYaml("file.yaml");
 
-export = theModule
+		console.log(data.value);
+	})();
+	```
+	*/
+	(filename: string): Promise<object>
+
+	/**
+	Synchronously import a YAML file.
+	@param filename The file to import.
+	@example
+	```
+	const importYaml = require("import-yaml");
+
+	const data = importYaml.sync("file.yaml");
+
+	console.log(data.value);
+	```
+	*/
+	sync(filename: string): object
+}
+
+export = importYaml

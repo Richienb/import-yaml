@@ -1,41 +1,37 @@
-# the-module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# import-yaml [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/import-yaml/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/import-yaml)
 
-My awesome module.
+Import a YAML file.
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/import-yaml.png)](https://npmjs.com/package/import-yaml)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install import-yaml
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
+const importYaml = require("import-yaml");
 
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+const data = importYaml.sync("file.yaml");
+
+console.log(data.value);
 ```
 
 ## API
 
-### theModule(input, options?)
+### importYaml(filename)
 
-#### input
+Returns a promise that resolves with the YAML contents parsed as an object.
+
+### importYaml.sync(filename)
+
+Returns the YAML contents parsed as an object.
+
+#### filename
 
 Type: `string`
 
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+The file to import.

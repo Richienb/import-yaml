@@ -1,8 +1,8 @@
 {
-	"name": "the-module",
+	"name": "import-yaml",
 	"version": "0.0.0",
-	"description": "My awesome module.",
-	"repository": "https://github.com/Richienb/the-module.git",
+	"description": "Import a YAML file.",
+	"repository": "https://github.com/Richienb/import-yaml.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
 	"license": "MIT",
 	"main": "index.js",
@@ -11,14 +11,22 @@
 		"index.d.ts"
 	],
 	"engines": {
-		"node": ">=10"
+		"node": "^10.17 || >=11.14"
 	},
 	"scripts": {
 		"lint": "xo",
 		"test": "xo && ava"
 	},
-	"keywords": [],
-	"dependencies": {},
+	"keywords": [
+		"yaml",
+		"yml",
+		"import",
+		"require",
+		"load"
+	],
+	"dependencies": {
+		"js-yaml": "^3.14.0"
+	},
 	"devDependencies": {
 		"ava": "^3.10.1",
 		"eslint-config-richienb": "^0.4.2",
