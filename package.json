@@ -1,6 +1,6 @@
 {
 	"name": "import-yaml",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Import a YAML file.",
 	"repository": "https://github.com/Richienb/import-yaml.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
